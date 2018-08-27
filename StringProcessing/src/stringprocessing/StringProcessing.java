@@ -7,10 +7,8 @@ package stringprocessing;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -42,14 +40,27 @@ public class StringProcessing {
                 String phoneNum = inputData[4];
                 String email = inputData[5];
                 
-                records[currentIndex] = String.format("%-20s%-20s%-10s%-10s%-20s%-20s", inputData[0], inputData[1],inputData[2], inputData[3], inputData[4], inputData[5]);
+                records[currentIndex] = String.format("%-20s%-20s%-10s%-10s%-20s%-40s", inputData[0], inputData[1],inputData[2], inputData[3], inputData[4], inputData[5]);
                 currentIndex++;
+                
+                
             }
         } catch (FileNotFoundException ex) {
             System.err.println("Could not find the input file");
         }
         
-        for (String record : records) {
+        String firstName=" ";
+        String lastName=" ";
+        for (String record : records) { 
+            if(!record.equals(firstName)){
+            } else {
+                System.out.println("Error!!");
+            }
+            
+            if(record.equals(lastName)){
+                System.out.println("Error!!");
+            }
+            
             System.out.println(record);
         }
         
